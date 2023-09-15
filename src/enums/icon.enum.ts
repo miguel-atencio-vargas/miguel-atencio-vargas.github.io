@@ -1,0 +1,7 @@
+export enum ICON_ENUM {
+  HOME,
+  CURRICULUM,
+  PROJECTS,
+  CONTACT,
+  HEADER,
+};
