@@ -1,7 +1,18 @@
 ---
-import HomePage from "../layouts/HomePage.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RequestEditor from "../components/RequestEditor.astro"
 ---
 
-<HomePage>
-	<h1>Hola mundo</h1>
-</HomePage>
+<BaseLayout>
+	<div class="postman">
+		<RequestEditor/>
+	</div>
+</BaseLayout>
+
+<style>
+	.postman {
+		margin: 5%;
+		padding: 0 8%;
+	}
+
+</style>
