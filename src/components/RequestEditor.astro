@@ -1,0 +1,56 @@
+<div class="request-editor">
+  <div class="request-url">
+    <div class="request-url-method">
+      <p>GET</p>
+    </div>
+    <div class="request-divider"></div>
+    <div class="request-url-editor">
+      <p>https://api.miguel.io/profile</p>
+    </div>
+  </div>
+  <button class="request-url-button">
+    <p>Send</p>
+  </button>
+</div>
+
+<style>
+  .request-editor {
+    display: flex;
+  }
+  
+  .request-url {
+    width: 100%;
+    display: flex;
+    border: 2px solid var(--WHITE_SMOOTH);
+    border-radius: 5px;
+    margin-right: 10px;
+    align-items: center;
+  }
+
+  .request-url-method {
+    color: var(--CYAN);
+    padding: 10px;
+  }
+
+  .request-divider {
+    width: 0px;
+    height: 60%;
+    border: 1px var(--WHITE_SMOOTH) solid;
+    border-radius: 5px;
+  }
+
+  .request-url-editor {
+    padding: 10px;
+  }
+
+  .request-url-button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: var(--DARK_BLUE);
+    font-weight: 700;
+    background-color: var(--CYAN);
+    border: 2px solid var(--CYAN);
+    border-radius: 5px;
+  }
+</style>
