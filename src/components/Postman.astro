@@ -1,0 +1,37 @@
+---
+import RequestEditor from "../components/RequestEditor.astro";
+import ResponseData from "../components/ResponseData.astro";
+---
+
+<div class="postman">
+  <RequestEditor />
+
+  <div class="response">
+    <div class="response-header">
+      <div class="response-status">
+        <p>⦿ 200 OK</p>
+      </div>
+      <div>
+        <p>Content-Type: application/json</p>
+      </div>
+    </div>
+    <ResponseData />
+  </div>
+</div>
+
+<style>
+  .postman {
+    margin: 5%;
+    padding: 0 8%;
+  }
+
+  .response-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+
+  .response-status {
+    color: var(--CYAN);
+  }
+</style>

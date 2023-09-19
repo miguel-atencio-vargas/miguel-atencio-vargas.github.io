@@ -1,31 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import RequestEditor from "../components/RequestEditor.astro";
-import ResponseData from "../components/ResponseData.astro";
+import Postman from "../components/Postman.astro";
 ---
 
 <BaseLayout>
-	<div class="postman">
-		<RequestEditor />
-
-		<div class="response">
-			<div class="response-status">
-				<p>200 OK</p>
-			</div>
-			<div>
-				<p>JSON</p>
-			</div>
-			<ResponseData />
-		</div>
-	</div>
-
-	<style>
-		.postman {
-			margin: 5%;
-			padding: 0 8%;
-		}
-		.response {
-			margin: 3%;
-		}
-	</style>
+	<Postman />
 </BaseLayout>
