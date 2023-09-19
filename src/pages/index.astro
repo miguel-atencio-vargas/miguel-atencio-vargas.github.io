@@ -1,11 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import RequestEditor from "../components/RequestEditor.astro"
+import RequestEditor from "../components/RequestEditor.astro";
+import Profile from "../components/Profile.md";
 ---
 
 <BaseLayout>
 	<div class="postman">
-		<RequestEditor/>
+		<RequestEditor />
+
+		<div class="response">
+			<div class="response-status">
+				<p>200 OK</p>
+			</div>
+			<div>
+				<p>JSON</p>
+			</div>
+			<Profile />
+		</div>
 	</div>
 </BaseLayout>
 
@@ -15,4 +26,27 @@ import RequestEditor from "../components/RequestEditor.astro"
 		padding: 0 8%;
 	}
 
+	.response {
+		margin: 3%;
+		overflow: hidden;
+	}
+
+	div[data-rehype-pretty-code-fragment] {
+		padding: 100px;
+		overflow: hidden;
+
+		/* stylist preferences */
+		background-color: rgb(255 255 255 / 0.1);
+		border-radius: 0.5rem;
+	}
+
+	[data-rehype-pretty-code-fragment] {
+		overflow-x: auto;
+
+		/* stylist preferences */
+		padding: 10000px 0.5rem;
+		padding-bottom: 0.5rem;
+		font-size: 0.875rem;
+		line-height: 1.5rem;
+	}
 </style>
