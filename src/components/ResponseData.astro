@@ -1,0 +1,62 @@
+---
+import { Code } from "astro:components";
+
+const data = `{
+    "name": "Miguel",
+    "last-name": "Atencio Vargas",
+    "hobbies": [
+        "cooking",
+        "basketball",
+        "photography",
+        "music-production"
+    ],
+    "experience": [
+        {
+            "name": "Applaudo Studios - Luuk",
+            "image-src": "https: //image.luuk.png",
+            "role": "Backend Developer",
+            "start-date": "2022-01-01T06:00:00",
+            "end-date": "2023-09-15T06:00:00",
+            "technologies": [
+                "Node JS",
+                "Hapi JS",
+                "MongoDB",
+                "Elastic Search",
+                "Redis",
+                "RabbitMQ",
+            ]
+        }
+    ]
+}`;
+---
+
+<div class="response-data">
+  <Code code={data} lang="json" />
+</div>
+
+<style>
+  .response-data {
+    overflow: auto;
+    background-color: rgb(255 255 255 / 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+
+    code {
+      counter-reset: step;
+      counter-increment: step 0;
+    }
+
+    code .line::before {
+      content: counter(step);
+      counter-increment: step;
+      width: 1rem;
+      margin: 0 1.5rem 0 1rem;
+      display: inline-block;
+      text-align: right;
+      color: rgba(115, 138, 148, 0.4);
+    }
+  }
+</style>
