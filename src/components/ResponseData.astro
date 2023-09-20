@@ -31,19 +31,35 @@ const data = `{
 ---
 
 <div class="response-data">
-  <Code code={data} lang="json" />
+  <Code code={data} lang="json" theme="css-variables" />
 </div>
 
 <style>
   .response-data {
+    /** Astro theme - css variables */
+    --astro-code-color-text: var(--WHITE_SMOOTH);
+    --astro-code-color-background: var(--DARK_BLUE);
+    --astro-code-token-constant: plum;
+    --astro-code-token-string: orchid;
+    --astro-code-token-comment: salmon;
+    --astro-code-token-keyword: var(--CYAN);
+    --astro-code-token-parameter: seashell;
+    --astro-code-token-function: dodgerblue;
+    --astro-code-token-string-expression: var(--WHITE_SMOOTH);
+    --astro-code-token-punctuation: linen;
+    --astro-code-token-link: honeydew;
+
     overflow: auto;
-    background-color: rgb(255 255 255 / 0.1);
+    background-color: rgba(255, 255, 255, 0.103);
     border-radius: 0.5rem;
     padding: 0.5rem;
-    padding-bottom: 0.5rem;
     font-size: 0.875rem;
     line-height: 1.5rem;
 
+    .astro-code {
+      margin: 0.2rem
+    }
+    
     code {
       counter-reset: step;
       counter-increment: step 0;
@@ -56,7 +72,7 @@ const data = `{
       margin: 0 1.5rem 0 1rem;
       display: inline-block;
       text-align: right;
-      color: rgba(115, 138, 148, 0.4);
+      color: rgba(255, 255, 255, 0.227);
     }
   }
 </style>
