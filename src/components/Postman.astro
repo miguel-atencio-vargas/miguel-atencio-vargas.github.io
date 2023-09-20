@@ -9,10 +9,11 @@ import ResponseData from "../components/ResponseData.astro";
   <div class="response">
     <div class="response-header">
       <div class="response-status">
-        <p>⦿ 200 OK</p>
+        <span class="response-icon">⦿</span>
+        <span>200 OK</span>
       </div>
       <div>
-        <p>Content-Type: application/json</p>
+        <span>Content-Type: application/json</span>
       </div>
     </div>
     <ResponseData />
@@ -31,7 +32,8 @@ import ResponseData from "../components/ResponseData.astro";
     padding: 0.5rem 0;
   }
 
-  .response-status {
+  .response-icon {
     color: var(--CYAN);
+    margin-right: .5rem;
   }
 </style>
