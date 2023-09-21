@@ -27,10 +27,19 @@ import {
     is:global
     define:vars={{ CYAN, DARK_BLUE, WHITE_SMOOTH, MAIN_FONT_FAMILY }}
   >
+    /* Register your custom font family and tell the browser where to find it. */
+    @font-face {
+      font-family: "SF Mono";
+      src: url("/fonts/SFMonoRegular.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
     body {
       color: var(--WHITE_SMOOTH);
       background-color: var(--DARK_BLUE);
       font-family: var(--MAIN_FONT_FAMILY);
     }
   </style>
+
 </html>
