@@ -57,15 +57,15 @@ const data = `{
     line-height: 1.5rem;
 
     .astro-code {
-      margin: 0.2rem
+      margin: 0.2rem;
     }
-    
-    code {
+
+    :is(code) {
       counter-reset: step;
       counter-increment: step 0;
     }
 
-    code .line::before {
+    :is(code) .line::before {
       content: counter(step);
       counter-increment: step;
       width: 1rem;
