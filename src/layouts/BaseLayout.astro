@@ -8,13 +8,14 @@ import {
   CYAN,
 } from "../themes/index";
 
-const { title } = Astro.props;
+const { title, content } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={content}>
     <!-- Start - Favicon head -->
     <link
       rel="apple-touch-icon"
