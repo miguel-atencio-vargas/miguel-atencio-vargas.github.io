@@ -5,8 +5,8 @@ import { ICON_ENUM } from "../enums/icon.enum";
 ---
 
 <header class="header">
-  <div >
-    <a class="header-logo" href="#">
+  <div>
+    <a class="header-logo" href="/">
       <h2>atencio</h2>
       <span class="header-icon"> <Icon name={ICON_ENUM.HEADER} /></span>
       <span>miguel.io</span>
@@ -14,9 +14,21 @@ import { ICON_ENUM } from "../enums/icon.enum";
   </div>
   <nav>
     <ul class="header-navigation">
-      <ItemHeaderDesktop type={ICON_ENUM.CURRICULUM} label="Curriculum" />
-      <ItemHeaderDesktop type={ICON_ENUM.PROJECTS} label="Projects" />
-      <ItemHeaderDesktop type={ICON_ENUM.CONTACT} label="Contact" />
+      <ItemHeaderDesktop
+        type={ICON_ENUM.CURRICULUM}
+        label="Curriculum"
+        href="/curriculum"
+      />
+      <ItemHeaderDesktop
+        type={ICON_ENUM.PROJECTS}
+        label="Projects"
+        href="/projects"
+      />
+      <ItemHeaderDesktop
+        type={ICON_ENUM.CONTACT}
+        label="Contact"
+        href="contact"
+      />
     </ul>
   </nav>
 </header>
