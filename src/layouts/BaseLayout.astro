@@ -1,18 +1,43 @@
 ---
 import HeaderDesktop from "../components/HeaderDesktop.astro";
 import "../styles/reset.css";
-import {
-  DARK_BLUE,
-  WHITE_SMOOTH,
-  MAIN_FONT_FAMILY,
-  CYAN,
-} from "../themes/index";
+const { title, content } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={content} />
+    <!-- Start - Favicon head -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- End - Favicon head -->
+
+    <title>{title} | miguel.io</title>
   </head>
 
   <HeaderDesktop />
@@ -23,11 +48,7 @@ import {
     </article>
   </body>
 
-  <style
-    is:global
-    define:vars={{ CYAN, DARK_BLUE, WHITE_SMOOTH, MAIN_FONT_FAMILY }}
-  >
-    /* Register your custom font family and tell the browser where to find it. */
+  <style is:global>
     @font-face {
       font-family: "SF Mono";
       src: url("./fonts/SFMonoRegular.woff") format("woff");
@@ -35,11 +56,18 @@ import {
       font-style: normal;
       font-display: swap;
     }
+
+    :root {
+      --cyan: hsla(169, 100%, 74%, 1);
+      --dark-blue: hsla(209, 81%, 8%, 1);
+      --white-smooth: hsla(38, 100%, 95%, 1);
+      --main-font-family: "SF Mono";
+    }
+
     body {
-      color: var(--WHITE_SMOOTH);
-      background-color: var(--DARK_BLUE);
-      font-family: var(--MAIN_FONT_FAMILY);
+      color: var(--white-smooth);
+      background-color: var(--dark-blue);
+      font-family: var(--main-font-family);
     }
   </style>
-
 </html>
