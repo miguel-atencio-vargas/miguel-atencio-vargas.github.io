@@ -1,13 +1,6 @@
 ---
 import HeaderDesktop from "../components/HeaderDesktop.astro";
 import "../styles/reset.css";
-import {
-  DARK_BLUE,
-  WHITE_SMOOTH,
-  MAIN_FONT_FAMILY,
-  CYAN,
-} from "../themes/index";
-
 const { title, content } = Astro.props;
 ---
 
@@ -55,11 +48,7 @@ const { title, content } = Astro.props;
     </article>
   </body>
 
-  <style
-    is:global
-    define:vars={{ CYAN, DARK_BLUE, WHITE_SMOOTH, MAIN_FONT_FAMILY }}
-  >
-    /* Register your custom font family and tell the browser where to find it. */
+  <style is:global>
     @font-face {
       font-family: "SF Mono";
       src: url("./fonts/SFMonoRegular.woff") format("woff");
@@ -67,10 +56,18 @@ const { title, content } = Astro.props;
       font-style: normal;
       font-display: swap;
     }
+
+    :root {
+      --cyan: hsla(169, 100%, 74%, 1);
+      --dark-blue: hsla(209, 81%, 8%, 1);
+      --white-smooth: hsla(38, 100%, 95%, 1);
+      --main-font-family: "SF Mono";
+    }
+
     body {
-      color: var(--WHITE_SMOOTH);
-      background-color: var(--DARK_BLUE);
-      font-family: var(--MAIN_FONT_FAMILY);
+      color: var(--white-smooth);
+      background-color: var(--dark-blue);
+      font-family: var(--main-font-family);
     }
   </style>
 </html>
