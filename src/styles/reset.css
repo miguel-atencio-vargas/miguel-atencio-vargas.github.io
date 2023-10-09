@@ -73,6 +73,10 @@
     display: block;
   }
 
+  [astro-icon] {
+    display: block;
+}
+
   /* Natural flow and rhythm in articles by default */
 
   article>*+* {

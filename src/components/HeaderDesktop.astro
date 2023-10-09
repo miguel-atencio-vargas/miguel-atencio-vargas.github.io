@@ -1,31 +1,31 @@
 ---
-import ItemHeaderDesktop from "./ItemHeaderDesktop.astro";
-import Icon from "./Icon.astro";
+import { Icon } from "astro-icon";
 import { ICON_ENUM } from "../enums/icon.enum";
+import ItemHeaderDesktop from "./ItemHeaderDesktop.astro";
 ---
 
 <header class="header">
   <div>
     <a class="header-logo" href="/">
       <h2>atencio</h2>
-      <span class="header-icon"> <Icon name={ICON_ENUM.HEADER} /></span>
+      <Icon name="cli-header" />
       <span>miguel.io</span>
     </a>
   </div>
   <nav>
     <ul class="header-navigation">
       <ItemHeaderDesktop
-        type={ICON_ENUM.CURRICULUM}
+        name={ICON_ENUM.CURRICULUM}
         label="Curriculum"
         href="/curriculum"
       />
       <ItemHeaderDesktop
-        type={ICON_ENUM.PROJECTS}
+        name={ICON_ENUM.PROJECTS}
         label="Projects"
         href="/projects"
       />
       <ItemHeaderDesktop
-        type={ICON_ENUM.CONTACT}
+        name={ICON_ENUM.CONTACT}
         label="Contact"
         href="contact"
       />
@@ -44,13 +44,17 @@ import { ICON_ENUM } from "../enums/icon.enum";
 
   .header-logo {
     display: flex;
+    align-items: center;
   }
 
   .header-navigation {
     display: flex;
   }
 
-  .header-icon {
-    margin: auto 15px;
+  [astro-icon="cli-header"] {
+    width: 56px;
+    height: 25px;
+    margin: 0 5px;
   }
+
 </style>
