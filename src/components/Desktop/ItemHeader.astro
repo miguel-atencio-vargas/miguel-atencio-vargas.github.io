@@ -6,9 +6,7 @@ const { name, label, href = "#" } = Astro.props;
 <li class="item-header">
   <a href={href} class="item-link">
     <Icon name={name} />
-    <span>
-      {label}
-    </span>
+    <span>{label}</span>
   </a>
 </li>
 
@@ -31,9 +29,6 @@ const { name, label, href = "#" } = Astro.props;
   }
 
   [astro-icon] {
-    width: 24px;
-    height: 24px;
     margin-right: 5px;
   }
-
 </style>

@@ -1,0 +1,26 @@
+---
+import { Icon } from "astro-icon";
+import { ICON_ENUM } from "../../enums";
+---
+
+<div>
+  <a class="header-logo" href="/">
+    <h2>atencio</h2>
+    <Icon name={ICON_ENUM.TILDE} />
+    <h2>miguel</h2>
+    <span>.io</span>
+  </a>
+</div>
+
+<style>
+  .header-logo {
+    display: flex;
+  }
+
+  [astro-icon="tilde"] {
+    width: 56px;
+    height: 25px;
+    margin: 0 5px;
+    fill: var(--cyan);
+  }
+</style>

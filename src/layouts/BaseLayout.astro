@@ -1,6 +1,7 @@
 ---
-import HeaderDesktop from "../components/HeaderDesktop.astro";
 import "../styles/reset.css";
+import HeaderDesktop from "../components/Desktop/Header.astro";
+import HeaderMobile from "../components/Mobile/Header.astro";
 const { title, content } = Astro.props;
 ---
 
@@ -41,6 +42,7 @@ const { title, content } = Astro.props;
   </head>
 
   <HeaderDesktop />
+  <HeaderMobile />
 
   <body>
     <article>
@@ -68,6 +70,13 @@ const { title, content } = Astro.props;
       color: var(--white-smooth);
       background-color: var(--dark-blue);
       font-family: var(--main-font-family);
+      margin: 10px;
+    }
+
+    @media (width >= 744px) {
+      body {
+        margin: 10px 20px;
+      }
     }
   </style>
 </html>
