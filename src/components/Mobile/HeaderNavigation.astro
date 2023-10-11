@@ -1,0 +1,17 @@
+---
+import ItemHeader from "./ItemHeader.astro";
+import { ICON_ENUM } from "../../enums";
+---
+
+<nav>
+  <ul class="header-navigation">
+    <ItemHeader type={ICON_ENUM.HOME} label="Home" href="/" />
+    <ItemHeader
+      type={ICON_ENUM.CURRICULUM}
+      label="Curriculum"
+      href="/curriculum"
+    />
+    <ItemHeader type={ICON_ENUM.PROJECTS} label="Projects" href="/projects" />
+    <ItemHeader type={ICON_ENUM.CONTACT} label="Contact" href="/contact" />
+  </ul>
+</nav>

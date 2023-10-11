@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon";
+const { type, label, href = "#" } = Astro.props;
+---
+
+<li class="item-header">
+  <a href={href} class="item-link">
+    <Icon name={type} />
+    <div class="label">{label}</div>
+  </a>
+</li>
+
+<style>
+  .item-header {
+    list-style: none;
+  }
+
+  .item-link {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 7px;
+  }
+
+  [astro-icon] {
+    margin-right: 7px;
+    flex-shrink: 0;
+  }
+</style>

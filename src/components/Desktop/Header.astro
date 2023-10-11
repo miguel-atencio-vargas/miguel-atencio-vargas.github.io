@@ -1,0 +1,29 @@
+---
+import Logo from "./Logo.astro";
+import HeaderNavigation from "./HeaderNavigation.astro";
+---
+
+<header class:list={["header", "display-none"]}>
+  <Logo />
+  <HeaderNavigation />
+</header>
+
+<style>
+  .display-none {
+    display: none;
+  }
+
+  .display-flex {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (width >= 744px) {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+  }
+</style>
