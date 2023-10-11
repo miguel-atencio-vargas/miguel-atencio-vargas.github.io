@@ -1,0 +1,33 @@
+---
+import { Icon } from "astro-icon";
+import { ICON_ENUM } from "../../enums";
+import Logo from "./Logo.astro";
+import MenuModal from "./MenuModal.astro";
+---
+
+<header class="header">
+  <Logo />
+  <Icon id="header-mobile-button" name={ICON_ENUM.BURGER} />
+  <MenuModal />
+</header>
+
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  @media (width >= 744px) {
+    .header {
+      display: none;
+    }
+  }
+
+  [astro-icon] {
+    cursor: pointer;
+    color: var(--cyan);
+  }
+
+</style>

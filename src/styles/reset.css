@@ -73,6 +73,13 @@
     display: block;
   }
 
+  /* Astro icons styles */
+  [astro-icon] {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
   /* Natural flow and rhythm in articles by default */
 
   article>*+* {

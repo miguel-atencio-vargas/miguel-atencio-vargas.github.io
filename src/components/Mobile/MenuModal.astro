@@ -1,0 +1,73 @@
+---
+import { Icon } from "astro-icon";
+import { ICON_ENUM } from "../../enums";
+import HeaderNavigation from "./HeaderNavigation.astro";
+---
+
+<div id="header-mobile-menu" class="menu-modal">
+  <div class="blur"></div>
+  <div class="menu-container">
+    <HeaderNavigation />
+  </div>
+  <Icon name={ICON_ENUM.CLOSE} />
+</div>
+
+<style>
+  .menu-modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.807);
+  }
+
+  .menu-container {
+    width: clamp(100px, 90vw, 250px);
+    padding: 20px 15px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid var(--cyan);
+    background-color: var(--dark-blue);
+    margin-bottom: 15px;
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .display-flex {
+    display: flex;
+  }
+
+  .blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background-color: var(--dark-blue);
+    opacity: 0.7;
+    filter: blur(200px);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mobile nav toggle
+    const menuButton = document.getElementById("header-mobile-button");
+    menuButton && menuButton.addEventListener("click", toggleMobileNav);
+    // Menu toggle
+    const menu = document.getElementById("header-mobile-menu");
+    menu && menu.addEventListener("click", toggleMobileNav);
+  });
+
+  function toggleMobileNav() {
+    [...document.querySelectorAll(".menu-modal")].forEach((el) => {
+      el.classList.toggle("display-flex");
+    });
+  }
+</script>
