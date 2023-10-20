@@ -56,7 +56,7 @@ import HeaderNavigation from "./HeaderNavigation.astro";
 </style>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     // Mobile nav toggle
     const menuButton = document.getElementById("header-mobile-button");
     menuButton && menuButton.addEventListener("click", toggleMobileNav);
