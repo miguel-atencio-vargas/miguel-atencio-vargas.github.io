@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import "../styles/reset.css";
 import HeaderDesktop from "../components/Desktop/Header.astro";
 import HeaderMobile from "../components/Mobile/Header.astro";
@@ -39,6 +40,7 @@ const { title, content } = Astro.props;
     <!-- End - Favicon head -->
 
     <title>{title} | miguel.io</title>
+    <ViewTransitions />
   </head>
 
   <HeaderDesktop />
