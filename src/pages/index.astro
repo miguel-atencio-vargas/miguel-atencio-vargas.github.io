@@ -93,8 +93,9 @@ import profileImage from "../assets/images/profile-home.png";
 		font-size: calc(3vw + 4px);
 	}
 
-	@media (width >= 321px) {
+	@media (width >= 744px) {
 		.background {
+			height: 65dvh;
 		}
 
 		.ornament {
@@ -103,8 +104,25 @@ import profileImage from "../assets/images/profile-home.png";
 		}
 
 		.picture {
-			max-width: fit-content;
 			width: 15%;
+		}
+
+		.index-content {
+			height: 50dvh;
+		}
+
+		.main-text {
+			font-size: calc(4vw + 5px);
+		}
+
+		.sub-text {
+			font-size: calc(2vw + 5px);
+		}
+	}
+
+	@media (width >= 1200px) {
+		.background {
+			height: 80dvh;
 		}
 	}
 </style>
