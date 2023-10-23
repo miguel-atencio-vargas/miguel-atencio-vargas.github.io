@@ -1,0 +1,122 @@
+---
+import { Image } from "astro:assets";
+import profileImage from "../assets/images/profile-home.png";
+---
+
+<div>
+    <div class="background">
+        <div class="picture">
+            <Image src={profileImage} alt="Profile picture of Miguel Atencio" />
+        </div>
+        <div class="ornament">
+            <svg
+                viewBox="0 0 1440 156"
+                preserveAspectRatio="xMidYMin slice"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M-252 156V0C90.2016 52.3946 330.518 80.5662 468.949 84.5148L479.005 84.8062C583.54 87.8875 601.494 90.276 614.999 106.009L615.419 106.505C632.849 127.302 658.926 140.601 688.115 140.864L689.000 140.868C718.251 140.868 744.446 127.778 762.050 107.133L763.001 106.009C776.371 90.4333 794.101 87.9366 895.885 84.8984L898.995 84.8062L909.051 84.5148C1046.1 80.6057 1283 52.9556 1619.76 1.56457L1630.000 0V156H-252Z"
+                ></path>
+            </svg>
+        </div>
+    </div>
+    <div class="home-content">
+        <p class="main-text">Software engineer</p>
+        <p class="sub-text">problem solver, detail-oriented and self-taught.</p>
+    </div>
+</div>
+
+<style>
+	.background {
+		width: 100%;
+		height: 60dvh;
+		min-height: 200px;
+		overflow: hidden;
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: url("../assets/images/background.jpg");
+		background-size: cover;
+	}
+
+	.ornament {
+		width: 200dvw;
+		position: absolute;
+		bottom: 0;
+		transform: translateY(5%) translateX(-23.3%);
+		fill: var(--dark-blue);
+	}
+
+	.ornament svg {
+		display: block;
+		box-sizing: content-box;
+	}
+
+	.picture {
+		max-width: fit-content;
+		width: 25%;
+		z-index: 1;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateY(-5px) translateX(-50%);
+	}
+
+	.picture img {
+		height: auto;
+	}
+
+	.home-content {
+		height: 30dvh;
+		min-height: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		text-shadow: black 4px 4px 10px;
+	}
+
+	.main-text {
+		font-weight: 600;
+		font-size: calc(5vw + 5px);
+		margin-bottom: 1rem;
+	}
+
+	.sub-text {
+		font-size: calc(3vw + 4px);
+	}
+
+	@media (width >= 744px) {
+		.background {
+			height: 65dvh;
+		}
+
+		.ornament {
+			width: 120%;
+			transform: translateY(5%) translateX(-6.2%);
+		}
+
+		.picture {
+			width: 15%;
+		}
+
+		.home-content {
+			height: 50dvh;
+		}
+
+		.main-text {
+			font-size: calc(4vw + 5px);
+		}
+
+		.sub-text {
+			font-size: calc(2vw + 5px);
+		}
+	}
+
+	@media (width >= 1200px) {
+		.background {
+			height: 80dvh;
+		}
+	}
+</style>
