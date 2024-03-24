@@ -1,0 +1,44 @@
+---
+const { content, icon } = Astro.props;
+---
+
+<button class="candy-button" data-ico={icon} style="--slist: #ffda5f, #f9376b">
+  {content}</button
+>
+
+<style>
+  .candy-button {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 0.5em;
+    position: relative;
+    margin: 1em auto;
+    border: solid 0.2em;
+    padding: 1em 1.5em;
+    border-radius: 9em;
+    background: #000000ab;
+    color: #fff;
+    font: 600 1.5em / 1.25;
+    cursor: pointer;
+    &::before {
+      position: absolute;
+      z-index: 2;
+      inset: -0.2em;
+      border-radius: inherit;
+      background: linear-gradient(to right bottom, var(--slist));
+      mix-blend-mode: darken;
+      content: "";
+    }
+
+    &::after {
+      filter: brightness(0) invert(1);
+      content: attr(data-ico);
+    }
+  }
+
+  @media (width >= 744px) {
+    .candy-button {
+      margin: 0 1rem;
+    }
+  }
+</style>

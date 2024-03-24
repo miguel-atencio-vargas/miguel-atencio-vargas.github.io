@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CandyButton from "../components/CandyButton.astro";
 import profileImage from "../assets/images/profile-home.png";
 ---
 
@@ -15,7 +16,7 @@ import profileImage from "../assets/images/profile-home.png";
 			</div>
 			<div class="ornament">
 				<svg
-					viewBox="0 0 1440 156"
+					viewBox="-33 0 1440 156"
 					preserveAspectRatio="xMidYMin slice"
 					xmlns="http://www.w3.org/2000/svg"
 				>
@@ -28,6 +29,10 @@ import profileImage from "../assets/images/profile-home.png";
 		<div class="index-content">
 			<p class="main-text">Software engineer</p>
 			<p class="sub-text">problem solver, detail-oriented and self-taught.</p>
+			<div class="call-to-action">
+				<CandyButton content="Download CV" icon="📄" />
+				<CandyButton content="Let's talk" icon="💬" />
+			</div>
 		</div>
 	</div>
 </BaseLayout>
@@ -35,23 +40,22 @@ import profileImage from "../assets/images/profile-home.png";
 <style>
 	.background {
 		width: 100%;
-		height: 55dvh;
-		min-height: 200px;
-		overflow: hidden;
+		height: 75vh;
 		z-index: -1;
 		position: absolute;
 		top: 0;
 		left: 0;
 		background-image: url("../assets/images/background.jpg");
 		background-size: cover;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
 	}
 
 	.ornament {
-		width: 200dvw;
-		position: absolute;
-		bottom: 0;
-		transform: translateY(5%) translateX(-23%);
+		width: 100%;
 		fill: var(--dark-blue);
+		transform: translateY(1px);
 	}
 
 	.ornament svg {
@@ -60,13 +64,10 @@ import profileImage from "../assets/images/profile-home.png";
 	}
 
 	.picture {
-		max-width: fit-content;
-		width: 25%;
-		z-index: 1;
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateY(-5px) translateX(-50%);
+		width: 13%;
+		align-self: center;
+		position: relative;
+		transform: translateY(70%);
 	}
 
 	.picture img {
@@ -74,11 +75,11 @@ import profileImage from "../assets/images/profile-home.png";
 	}
 
 	.index-content {
-		height: 30dvh;
+		height: 60vh;
 		min-height: 100px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-evenly;
 		text-align: center;
 		text-shadow: black 4px 4px 10px;
 	}
@@ -86,43 +87,38 @@ import profileImage from "../assets/images/profile-home.png";
 	.main-text {
 		font-weight: 600;
 		font-size: calc(5vw + 5px);
-		margin-bottom: 1rem;
 	}
 
 	.sub-text {
-		font-size: calc(3vw + 4px);
+		font-size: calc(4vw + 4px);
 	}
 
 	@media (width >= 744px) {
 		.background {
-			height: 65dvh;
-		}
-
-		.ornament {
-			width: 120%;
-			transform: translateY(5%) translateX(-6.2%);
+			height: 98vh;
 		}
 
 		.picture {
-			width: 15%;
+			width: 12%;
+			transform: translateY(80%);
 		}
 
 		.index-content {
-			height: 50dvh;
+			height: 55vh;
 		}
 
 		.main-text {
-			font-size: calc(4vw + 5px);
+			font-size: calc(3vw + 5px);
 		}
 
 		.sub-text {
-			font-size: calc(2vw + 5px);
+			font-size: calc(1vw + 5px);
 		}
-	}
 
-	@media (width >= 1200px) {
-		.background {
-			height: 80dvh;
+		.call-to-action {
+			display: flex;
+			justify-content: center;
+			margin-top: 1rem;
 		}
 	}
 </style>
