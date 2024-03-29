@@ -1,6 +1,6 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import "../styles/reset.css";
+import { ViewTransitions } from "astro:transitions";
 import HeaderDesktop from "../components/Desktop/Header.astro";
 import HeaderMobile from "../components/Mobile/Header.astro";
 const { title, content } = Astro.props;
@@ -43,35 +43,33 @@ const { title, content } = Astro.props;
     <ViewTransitions />
   </head>
 
-  <HeaderDesktop />
-  <HeaderMobile />
-
   <body>
+    <HeaderDesktop />
+    <HeaderMobile />
     <article>
       <slot />
     </article>
+    <style is:global>
+      @font-face {
+        font-family: "SF Mono";
+        src: url("./fonts/SFMonoRegular.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --cyan: hsla(169, 100%, 74%, 1);
+        --dark-blue: hsla(209, 81%, 8%, 1);
+        --white-smooth: hsla(38, 100%, 95%, 1);
+        --main-font-family: "SF Mono";
+      }
+
+      body {
+        color: var(--white-smooth);
+        background-color: var(--dark-blue);
+        font-family: var(--main-font-family);
+      }
+    </style>
   </body>
-
-  <style is:global>
-    @font-face {
-      font-family: "SF Mono";
-      src: url("./fonts/SFMonoRegular.woff") format("woff");
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    :root {
-      --cyan: hsla(169, 100%, 74%, 1);
-      --dark-blue: hsla(209, 81%, 8%, 1);
-      --white-smooth: hsla(38, 100%, 95%, 1);
-      --main-font-family: "SF Mono";
-    }
-
-    body {
-      color: var(--white-smooth);
-      background-color: var(--dark-blue);
-      font-family: var(--main-font-family);
-    }
-  </style>
 </html>
