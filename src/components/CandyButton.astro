@@ -6,20 +6,20 @@ const { content, icon } = Astro.props;
 
 <style>
   .candy-button {
-    --maring: .2em;
-    --negative-margin: -.2em;
+    --maring: .18em;
+    --negative-margin: -.18em;
     display: grid;
     grid-auto-flow: column;
     grid-gap: 0.5em;
     position: relative;
-    margin: 1em auto;
+    margin: .5em auto;
     border: solid var(--maring);
-    padding: 1em 1.5em;
+    padding: .6em 1.3em;
     border-radius: 9em;
     background: var(--dark-blue-tranparency);
     color: var(--white-smooth);
-    font-weight: 600;
-    font-size: calc(1.5em / 1.25);
+    font-weight: 500;
+    font-size: calc(1.5em / 1.3);
     cursor: pointer;
     &::before {
       position: absolute;
@@ -37,9 +37,9 @@ const { content, icon } = Astro.props;
     }
   }
 
-  @media (width >= 744px) {
+  @media (width >= 576px) {
     .candy-button {
-      margin: 0 1rem;
+      margin: 0 .5em;
     }
   }
 </style>

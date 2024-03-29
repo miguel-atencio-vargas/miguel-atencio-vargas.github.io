@@ -93,7 +93,12 @@ import profileImage from "../assets/images/profile-home.png";
 		font-size: calc(4vw + 4px);
 	}
 
-	@media (width >= 744px) {
+	.call-to-action {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media (width >= 576px) {
 		.background {
 			height: 98vh;
 		}
@@ -116,9 +121,8 @@ import profileImage from "../assets/images/profile-home.png";
 		}
 
 		.call-to-action {
-			display: flex;
+			flex-direction: row;
 			justify-content: center;
-			margin-top: 1rem;
 		}
 	}
 </style>
