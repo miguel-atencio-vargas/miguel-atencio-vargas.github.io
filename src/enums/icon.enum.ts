@@ -5,5 +5,6 @@ export const ICON_ENUM = {
   CONTACT: "contact",
   TILDE: "tilde",
   BURGER: "burger",
+  BLOG: "blog",
   CLOSE: "close"
 };
