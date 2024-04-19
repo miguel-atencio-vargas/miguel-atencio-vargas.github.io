@@ -30,7 +30,7 @@ import profileImage from "../assets/images/profile-home.png";
 			<p class="main-text">Software engineer</p>
 			<p class="sub-text">problem solver, detail-oriented and self-taught.</p>
 			<div class="call-to-action">
-				<CandyButton content="Download CV" icon="📄" />
+				<CandyButton content="Download CV" icon="📜" />
 				<CandyButton content="Let's talk" icon="💬" />
 			</div>
 		</div>
@@ -93,7 +93,12 @@ import profileImage from "../assets/images/profile-home.png";
 		font-size: calc(4vw + 4px);
 	}
 
-	@media (width >= 744px) {
+	.call-to-action {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media (width >= 576px) {
 		.background {
 			height: 98vh;
 		}
@@ -116,9 +121,8 @@ import profileImage from "../assets/images/profile-home.png";
 		}
 
 		.call-to-action {
-			display: flex;
+			flex-direction: row;
 			justify-content: center;
-			margin-top: 1rem;
 		}
 	}
 </style>
