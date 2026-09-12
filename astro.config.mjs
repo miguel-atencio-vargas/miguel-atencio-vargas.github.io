@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://skyfall947.github.io',
-  base: '.'
+  site: 'https://miguel-atencio-vargas.github.io',
 })
