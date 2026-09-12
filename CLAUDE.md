@@ -336,12 +336,24 @@ Roughly in priority order: routing and asset bugs are live defects, placeholder
 copy is a credibility defect, leftovers are cleanup.
 
 - `astro.config.mjs` has `site: 'https://skyfall947.github.io'` — wrong
-  domain, breaks canonical URLs and future sitemap/RSS. Also review `base: '.'`.
-- `Desktop/HeaderNavigation.astro` and the Mobile equivalent link Contact as
-  `href="contact"` — resolves relative, producing `/blog/contact`.
+  domain, breaks canonical URLs and future sitemap/RSS. `base: '.'` is also
+  wrong for a user site served from the domain root, but it is a *latent*
+  defect, not a live one: it emits `/./_astro/...` and browsers normalise the
+  `/./` segment away. What it actually costs is a corrupted
+  `import.meta.env.BASE_URL` and corrupted canonical/sitemap/RSS output the
+  moment those exist.
+- `Desktop/HeaderNavigation.astro` links Contact as `href="contact"` —
+  resolves relative against the trailing slash of `/blog/`, producing
+  `/blog/contact`. Verified 404 in production. The Mobile equivalent already
+  uses `/contact` and is **not** affected; only Desktop is.
 - `BaseLayout.astro` loads the font from `/public/fonts/SFMonoRegular.woff`;
-  correct path is `/fonts/SFMonoRegular.woff`. The custom font is not loading.
-- Favicon links use relative `./favicon/...` paths.
+  correct path is `/fonts/SFMonoRegular.woff`. The font **does** load today —
+  Vite resolves that path from the project root, bundles it, and emits it
+  content-hashed — so this is a robustness fix, not a live defect, and it gives
+  up the content hash. The option that keeps both is moving the font to
+  `src/assets/fonts/` and referencing it relatively.
+- Favicon links use relative `./favicon/...` paths — 404 on every nested
+  route. Verified in production.
 - `src/pages/blog.astro` contains Spanish placeholder copy
   ("aqui vamos a listar los articulos del blog"); `blog/article-1.md` and
   `article-2.md` are template dummies.
