@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# Permite clonar el repositorio y desplegar el proyecto
+# Allows cloning the repository and deploying the project
 permissions:
   contents: read
   pages: write
@@ -16,14 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Install, build, and upload your site
-        uses: withastro/action@v0
-        # with:
-            # path: . # La ubicación de la raíz de tu proyecto de Astro dentro del repositorio. (opcional)
-            # node-version: 16 # La versión específica de Node que debe utilizarse para compilar tu proyecto. Por defecto es la 16. (opcional)
-            # package-manager: yarn # El gestor de paquetes de Node que debe instalar las dependencias y compilar tu proyecto. Automáticamente detectadas con base en tu archivo lockfile. (opcional)
-
+        uses: withastro/action@v5
+        with:
+          # Matches the Node version used locally. withastro/action@v6 defaults to
+          # Node 24, which this Astro 3 project has not been verified against.
+          node-version: "22"
 
   deploy:
     needs: build
@@ -34,4 +33,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v5
