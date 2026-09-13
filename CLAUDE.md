@@ -19,9 +19,12 @@ set to a relative value (see Known issues).
 
 ## Positioning
 
-Miguel is repositioning from "backend developer" toward
-**Backend + Platform Engineering + Applied AI**, targeting Staff/Principal
-level over the next 5–10 years.
+Miguel's public title is **Backend & Platform Engineer · Applied AI** — per the
+CV, this is what he *is*, not what he is moving toward. The site should state it
+as current. The trajectory is Staff/Principal level over the next 5–10 years.
+
+Do not write the site as a repositioning-in-progress or hedge the title. An
+earlier version of this file framed it that way; the CV settled it.
 
 The site should communicate:
 
@@ -40,15 +43,26 @@ This section exists so that "never invent facts" is actionable. If a claim is
 not here, not already in the repo, and not in Miguel's request, it does not go
 on the site.
 
+**Source of truth: the CV.** `public/cv/miguel-atencio-vargas-cv.pdf` is published
+on the site and is the authoritative record. Where anything here and the CV
+disagree, the CV wins and this section gets corrected — not the other way round.
+A visitor can read both, so a contradiction between them is a credibility defect.
+
 **Professional**
 
-- Software engineer, 3+ years of professional experience.
-- Currently at **Cox Automotive – Dealer.com**, Managed Services / Spec Ops
-  (CodeRoad team), working remotely.
-- Previous employers: **NTG**, **Applaudo Studios**.
+- **Backend & Platform Engineer · Applied AI.** This is the public-facing title.
+- 4+ years of professional experience, spanning backend development, platform
+  operations, and applied AI.
+- Currently **Professional Services Engineer at CodeRoad** (client: Cox
+  Enterprises), Aug 2024 – Present, remote. The employer is named openly; the CV
+  names it.
+- Previous employers: **CCW** (Platform Support Engineer, Sep 2023 – Aug 2024)
+  and **Applaudo Studios** (Backend Developer, client LUUK Holdings,
+  Jan 2022 – Sep 2023). Both remote.
 - Based in La Paz, Bolivia. Works remotely with distributed teams.
-- `TODO(miguel):` confirm the exact public-facing job title to use on the site,
-  and whether current employer should be named or described generically.
+- Education: **B.S. Systems Engineering, Universidad Loyola de Bolivia**, La Paz,
+  Dec 2021.
+- Languages: **English C1 Advanced** (EF SET certified), **Spanish** native.
 
 **Verified figures usable on the site**
 
@@ -60,19 +74,51 @@ on the site.
 
 **Professional stack (claimable as production experience)**
 
-Node.js, TypeScript, JavaScript, NestJS, Hapi.js, MongoDB, PostgreSQL,
-Elasticsearch, Redis, RabbitMQ, Docker, Linux, REST APIs, Git/Git Flow,
-New Relic, Scrum.
+Taken from the CV's Core Skills, which presents all of the following as
+professional capability:
 
-**Applied AI / personal-project stack (claimable, but never as production work)**
+- **Languages and runtimes:** TypeScript, JavaScript, Node.js, Python, SQL
+- **Backend and architecture:** NestJS, HapiJS, REST APIs, RPC, event-driven
+  architecture, microservices, asynchronous task processing, systems design
+- **AI engineering:** OpenRouter API, Model Context Protocol (MCP), RAG
+  pipelines, vector search (Qdrant), multi-agent systems, LLM-based automation,
+  Claude Code
+- **Data and messaging:** PostgreSQL, MongoDB, Redis, Elasticsearch, OpenSearch,
+  RabbitMQ, MQTT
+- **Infrastructure and operations:** Docker, Docker Compose, AWS, Proxmox,
+  Windows Server, Linux, networking (DNS, DHCP, VPN), New Relic, incident
+  response
+- **Automation and testing:** Playwright, workflow automation, automated
+  auditing
+- **Practices:** automation, observability, technical documentation,
+  architecture decision records, agile delivery
 
-Claude API, Claude Code, MCP, Qdrant, LLM integrations, multi-agent
-orchestration, Python.
+Note the change: **applied AI is now a professional claim, not a personal-project
+claim.** The CV lists AI engineering under Core Skills, and SmartLog was built
+inside CodeRoad. Earlier versions of this file confined AI work to side projects;
+that restriction no longer applies.
 
 **Currently learning (never present as expertise)**
 
-Kubernetes, Kafka, AWS architecture, UML modeling, DDD, C#. These belong in
-`/now` or in blog posts, never in About or Work as capability claims.
+Kubernetes, Kafka, UML modeling, DDD, C#. These belong in `/now` or in blog
+posts, never in About or Work as capability claims.
+
+AWS was previously listed here. It has moved to the professional stack, because
+the CV lists it under Infrastructure & Operations and the Applaudo work ran
+event-driven services on AWS.
+
+**Certifications**
+
+- **Cloud Deployment Bootcamp — CodeRoad**, Dec 2025 (36-hour remote program).
+  **Completed.** This one may be stated as obtained.
+- **Anthropic Certified: Developer – Foundations** — in progress, expected 2026.
+  Never write this as obtained until the CV says so.
+
+**Contact details already public**
+
+The published CV carries Miguel's email and a personal mobile number, so both are
+already public by his decision. That does not make them free to scatter across
+the site — do not add them to new pages without being asked.
 
 ## Engineering philosophy (use as source material, do not paraphrase into fluff)
 
@@ -107,11 +153,19 @@ These protect credibility. Do not break them, even if asked in passing.
 2. If a case study or post needs a number Miguel has not provided, leave an
    explicit `TODO(miguel):` marker in the draft. Do not estimate.
 3. Do not claim production experience for personal projects, or team
-   leadership for solo work.
-4. Certifications and courses are only described as **in progress** until
-   Miguel confirms a pass. Never write a credential as obtained.
-5. Employer-internal work (client names, ticket details, internal tooling) does
-   not go on the site unless Miguel explicitly clears it.
+   leadership for solo work. Note that **applied AI is no longer confined to
+   personal projects** — the CV lists AI engineering under Core Skills, and
+   SmartLog was built inside CodeRoad. Trading Research Agent and Del Iver y
+   La Paz are still personal projects and are still scoped as such.
+4. Certifications and courses are only described as **in progress** until the
+   CV states otherwise. The CV currently confirms exactly one as completed:
+   Cloud Deployment Bootcamp — CodeRoad, Dec 2025. Anthropic Certified:
+   Developer – Foundations is in progress, expected 2026, and must never be
+   written as obtained.
+5. Employer-internal work (ticket details, internal tooling) does not go on the
+   site unless Miguel explicitly clears it. **Client names are cleared** for the
+   two the CV names — Cox Enterprises and LUUK Holdings — and only those. Any
+   other client is still off limits.
 
 ## Tech stack and constraints
 
@@ -165,10 +219,13 @@ The canonical route for case studies is `/work`. The existing
 ### The Now page
 
 `/now` is the honest, dated snapshot: what Miguel is working on, what he is
-learning, and what is in progress — including the certification track
-(Anthropic Developer – Foundations, with Architect – Foundations as a later
-step) and the current course priorities (Kubernetes, then Kafka, AWS
-architecture, microservices patterns, Redis, zero-trust).
+learning, and what is in progress — including Anthropic Certified: Developer –
+Foundations (in progress, expected 2026) and the current course priorities
+(Kubernetes, then Kafka, microservices patterns, Redis, zero-trust).
+
+"Architect – Foundations as a later step" was previously listed here and is not
+in the CV; do not state it as a plan until it is. AWS was also listed as a course
+priority — it is now a professional skill, so it belongs in the stack, not here.
 
 Rules: every entry carries a date, nothing is aspirational, and a stale Now
 page is worse than no Now page. If a change makes the Now page contradict
@@ -210,15 +267,28 @@ Every project under `/work` uses this structure, in this order:
 6. **Results** — outcomes, honestly scoped
 7. **Lessons** — what would be done differently
 
-Current case study candidates. All three are **personal projects** — results
-sections must be scoped accordingly (rule 3), and any metric needs a
-`TODO(miguel):` marker until Miguel supplies it.
+Current case study candidates, taken from the CV's Selected Projects. Any
+metric needs a `TODO(miguel):` marker until Miguel supplies it.
 
-- **Del Iver La Paz** — regional delivery platform for La Paz; NestJS
-  event-driven order orchestration
-- **Trading Research Agent** — RAG over Qdrant, LLM pattern detection
-  (Murphy + Smart Money Concepts frameworks)
-- **Multi-agent Docker system** — seven coordinated agents
+**Personal projects** — results sections scoped accordingly (rule 3):
+
+- **Del Iver y La Paz** — event-driven order orchestration backend for a local
+  delivery operation, modelling order lifecycle as asynchronous events. NestJS,
+  TypeScript, message queues, Docker.
+- **Trading Research Agent** — autonomous research agent detecting chart patterns
+  with LLM reasoning grounded in technical-analysis frameworks (Murphy, Smart
+  Money Concepts). RAG pipeline over Qdrant with Claude API. TypeScript, Python,
+  Qdrant, Claude API, Docker.
+
+**Employer context** — not a personal project, so rule 5 applies:
+
+- **SmartLog** — AI-correlated log intelligence, built during CodeRoad's internal
+  AI hackathon. Correlates logs using AI to accelerate incident diagnosis.
+  Python. Miguel **contributed to** it; do not write it as solo work. Keep to
+  what the CV says and do not add internal detail.
+
+The "Multi-agent Docker system — seven coordinated agents" previously listed here
+does not appear in the CV. It is not a candidate until Miguel reinstates it.
 
 Source material for these lives outside the repo (Miguel's notes and prior
 conversations). Ask for it; do not reconstruct it from the project name.
