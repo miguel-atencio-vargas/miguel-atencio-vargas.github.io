@@ -1,8 +1,12 @@
 ---
-const { content, icon } = Astro.props;
+const { content, icon, href, download } = Astro.props;
+
+// Renders an anchor when given an href so navigation and downloads stay semantic;
+// falls back to a button for the non-navigating variants.
+const Tag = href ? "a" : "button";
 ---
 
-<button class="candy-button" data-ico={icon}>{content}</button>
+<Tag class="candy-button" data-ico={icon} href={href} download={download}>{content}</Tag>
 
 <style>
   .candy-button {
